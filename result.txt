@@ -1,0 +1,29 @@
+
+
+
+
+
+
+Middle English
+
+
+
+
+
+
+1325-1375
+
+
+1325-75; Middle English glasen, derivative of glas glass {'class': ['tail-content', '']}
+
+glazily, adverb {'class': ['tail-content', 'ce-spot'], 'data-collapse-expand': '{"target": ".tail-elements", "type": "supEntry"}'}
+
+glaziness, noun {'class': ['tail-content', 'ce-spot'], 'data-collapse-expand': '{"target": ".tail-elements", "type": "supEntry"}'}
+
+reglaze, verb (used with object), reglazed, reglazing. {'class': ['tail-content', 'ce-spot'], 'data-collapse-expand': '{"target": ".tail-elements", "type": "supEntry"}'}
+
+semiglaze, noun {'class': ['tail-content', 'ce-spot'], 'data-collapse-expand': '{"target": ".tail-elements", "type": "supEntry"}'}
+
+glazed, adjectiveglazer, nounglazy, adjective {'class': ['tail-content']}
+
+                        C14 glasen, from glasglass {'class': ['tail-content']}
