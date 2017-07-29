@@ -16,7 +16,8 @@ def extracting(vocab_input: str) ->list:
     findings = soup.find_all('div', class_="tail-elements")
 
     for finding in findings:
-        if 'tail-type-relf' in finding.parent.parent['class']:
+        if ('tail-type-relf' in finding.parent.parent['class']) and \
+        ('pm-btn-spot' in finding.parent.parent['class']):
         # if 'ce-spot' in finding.parent['class']:
             # string_l = finding.text
             temp = finding.text
