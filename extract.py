@@ -6,7 +6,7 @@ import bs4 as bs
 
 def extracting(vocab_input: str) ->list:
     """extract related words on dictionary.com"""
-
+    print("extracting vocab: " + vocab_input)
     con_list = []
     dest_url = r"http://www.dictionary.com/browse/" + vocab_input + r"?s=t"
     # dest_url = r"http://www.merriam-webster.com/dictionary/" + vocab
@@ -30,5 +30,6 @@ def extracting(vocab_input: str) ->list:
             con_list.append(temp)
     for item in con_list:
         item = ', '.join(item)
-
-    return '\n'.join(con_list)
+    result = '\n'.join(con_list)
+    print("extracting result: " + result)
+    return result
