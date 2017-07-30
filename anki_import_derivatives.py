@@ -4,7 +4,8 @@
     in table: pho
 """
 
-import sqlite3
+# import sqlite3
+from derivatives_data import derivatives
 from aqt import mw
 from aqt.utils import showInfo
 from aqt.qt import *
@@ -18,18 +19,15 @@ def adding_derivatives():
     count = 0
     total = len(ids_cards)
 
-    with sqlite3.connect("vocab.db") as connection:
-        cursor = connection.cursor()
-        for id_card in ids_cards:
-            card = mw.col.getCard(id_card)
-            note = card.note()
-            vocab_anki = note['vocab']
-            cursor.execute("SELECT derivatives FROM pho WHERE vocab = ?;", (vocab_anki, ))
-            result = cursor.fetchone()
-            note["derivetives"] = result
-            note.flush()
-            count = count + 1
-        mw.reset()
+    for id_card in ids_cards:
+        card = mw.col.getCard(id_card)
+        note = card.note()
+        vocab_anki = note['vocab']
+        note["derivetives"] = derivatives[vocab_anki]
+        note.flush()
+        count = count + 1
+    mw.reset()
+
     showInfo(r"Change completed: {}/{}".format(count, total))
 
 
