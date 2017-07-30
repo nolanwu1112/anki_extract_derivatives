@@ -10,7 +10,7 @@
 
 import sqlite3
 import time
-import progressbar
+# import progressbar
 from extract import extracting
 # predefined attributes
 vocab_list = []
@@ -20,10 +20,12 @@ err_log = r"/error_log/log.txt"
 def retr_vocab(sql_path):
     """ access sql and retrieve a list of vocabulary"""
     with sqlite3.connect(sql_path) as connection:
+        print("Connection to SQL successfully!")
         cursor = connection.cursor()
         cursor.execute("SELECT vocab FROM pho;")
         result = cursor.fetchall()
         return result
+
 def store_der(sql_path, vocab_dict):
     """ store extracted derivatives based back to pho in the vocab.db"""
 
@@ -38,18 +40,22 @@ def store_der(sql_path, vocab_dict):
 
 def main():
     """main function"""
+    print("main function initiated.")
     dict_der = {}
     # retrieve a list of vocabulary
     sql_res = retr_vocab("./database/vocab.db")
+    print("Obtained vocabulary from database")
     # sql_res = ['glaze', 'abandon']
 
     for voc in sql_res:
         voc = str(voc)
+        print("looping thru sql result: " + voc)
         try:
             temp_ = extracting(voc)
             dict_der[voc] = temp_
         except:
             dict_der[voc] = None
+    print("Finishing writing dictionary!")
     store_der(r"./database/vocab.db", dict_der)
 
 if __name__ == '__main__':
