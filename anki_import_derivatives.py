@@ -23,7 +23,10 @@ def adding_derivatives():
         card = mw.col.getCard(id_card)
         note = card.note()
         vocab_anki = note['vocab']
-        note["derivetives"] = derivatives[vocab_anki]
+        try:
+            note["derivatives"] = derivatives[vocab_anki].decode("utf-8")
+        except KeyError:
+            pass
         note.flush()
         count = count + 1
     mw.reset()
