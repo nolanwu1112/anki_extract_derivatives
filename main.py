@@ -48,7 +48,7 @@ def main():
     # sql_res = ['glaze', 'abandon']
 
     for voc in sql_res:
-        voc = str(voc)
+        voc = str(voc[0])
         print("looping thru sql result: " + voc)
         try:
             temp_ = extracting(voc)
