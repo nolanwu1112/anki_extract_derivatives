@@ -49,6 +49,7 @@ def main():
 
     for voc in sql_res:
         voc = str(voc)
+        print("looping thru sql result: " + voc)
         try:
             temp_ = extracting(voc)
             dict_der[voc] = temp_
